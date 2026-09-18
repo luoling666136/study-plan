@@ -1,0 +1,19 @@
+{
+  "name": "软考打卡 · 软件设计师 2027 上半年",
+  "short_name": "软考打卡",
+  "description": "软件设计师（2027 上半年）36 周备考打卡：每日清单按日期自动生成，含回看历史、成绩曲线、错题本、36 周热力图。数据只存本机浏览器。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
