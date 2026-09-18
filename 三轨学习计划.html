@@ -236,7 +236,7 @@ const TRACK = {
 /* [软考, AI应用开发, 六级, 维护项, 里程碑] */
 const RAW_WEEKS = [
 ["阶段一 启动：裸测摸底 + 第一个小工具",
- "软考：下载并整理 2009–2025 真题到 D:\\study\\软考\\（命名「年份-半年-上午/下午」）；打印大纲考点清单贴墙；装 Anki 建端口号卡组",
+ "软考：下真题（主库实际覆盖 2020上–2024上；2023 下与 2025 另找，见「节奏与速查 → 真题与资料」）；打印大纲考点清单贴墙；装 Anki 建端口号卡组",
  "装 Python venv / Git / VS Code，建第一个 GitHub 仓库；命令行待办清单（增删改查 + JSON 存储）",
  "六级自测 1 套真题（只记分数当基线）；建 100 词/天的生词本",
  "三条线各建一个记录本：软考错题本、AI 提交日志（git log）、六级生词本",
@@ -1169,6 +1169,13 @@ function bugsHTML(){
 }
 
 /* ---------- 16. 视图：节奏与速查 ---------- */
+/* 资源行：名字 + 链接 + 实测说明 */
+function resRow(tag, name, url, note){
+  return '<div style="margin-bottom:9px;padding-left:9px;border-left:3px solid var(--rk)">'+
+    '<div class="row between"><a href="'+esc(url)+'" target="_blank" rel="noopener" style="color:#cfe2ff;text-decoration:none;font-size:13px">'+
+      esc(name)+' ↗</a><span class="tag">'+esc(tag)+'</span></div>'+
+    '<div class="det">'+esc(note)+'</div></div>';
+}
 function reviewTemplate(d){
   return `## 第 __ 周复盘（${ymd(d)}）
 
@@ -1241,6 +1248,17 @@ function rhythmHTML(){
     '<h3>数据库</h3><div class="det">候选键：只在依赖左边出现的属性必在键中　｜　2NF 去部分依赖，3NF 去传递依赖，BCNF 每个决定因素含码　｜　事务 ACID：原子/一致/隔离/持久</div>',
     '<h3>网络</h3><div class="det">端口见晨读卡　｜　子网可用主机数 = 2^主机位 − 2　｜　层次：物理层中继器集线器 / 链路层网桥交换机 / 网络层路由器 IP ICMP ARP / 传输层 TCP UDP / 应用层 HTTP FTP SMTP DNS DHCP</div>',
     '<h3>12 个最容易白丢分的坑</h3><div class="det">① 下午题只看懂不画出来　② 上午题按顺序死磕　③ 外部实体与数据存储之间画数据流　④ 聚合组合搞反（空心=聚合）　⑤ PV 操作顺序写反　⑥ 位示图/子网不看编号起点　⑦ C 语言循环边界凭感觉　⑧ 蒙对的题不算错题　⑨ 只刷题不背记忆型内容　⑩ 第 5 题犹豫超 2 分钟　⑪ 错过报名缴费窗口　⑫ 考前一晚熬夜</div>',
+  '</div>',
+  '<div class="card"><h2>真题与资料 <span class="badge">2026-09-18 逐个核实过</span></h2>',
+    '<div class="tiny muted" style="margin-bottom:8px">年份标注是**实际核对**的结果，不是抄仓库宣传语（那类 README 普遍夸大）。</div>',
+    resRow("主库（首选）", "xiaomabenten/software_designer", "https://github.com/xiaomabenten/software_designer", "实际有 2020-11 → 2024 上；另含教材第5版、学霸笔记、章节题库、官方机考绘图指南。MIT，1.6 GB（别全量 clone）"),
+    resRow("早期真题", "zccguagua/Software-Designer", "https://github.com/zccguagua/Software-Designer", "最新只到 2023 下；2016–2022 合卷 + 2020–2022 答案。README 提的 2024/2025 在仓库里不存在"),
+    resRow("国内镜像", "Gitee 镜像（免梯子）", "https://gitee.com/tian-xcode-team/software_designer", "同主库的国内镜像，速度更快"),
+    resRow("2025 真题", "信管网 历年真题在线", "https://www.cnitpm.com/bkzn/rs.html", "主库的缺口在这：2025 年考生回忆版，在线答、自动判分，适合碎片刷上午题"),
+    resRow("机考模拟", "官方模拟作答系统", "https://www.ruankao.org.cn/", "免费必练：绘图工具、公式编辑器、题目标记、切换试题。考前 1 个月练 3 次"),
+    resRow("视频讲解", "B站 17–25 年真题解析", "https://www.bilibili.com/video/BV13Q4y1d7B3/", "覆盖到 2025 上，看视频不用买课（机构号引流，只白嫖）"),
+    resRow("碎片刷题", "51CTO 软设模拟考场", "https://t.51cto.com/list/imitate/sub-239", "有 2025 模考公开卷；部分内容要注册，只用免费部分"),
+    '<div class="tiny muted" style="margin-top:10px">下载后落到 <code>D:\\study\\软考\\</code>，按「年份-半年-上午/下午」命名，例如 <code>2024上-上午.pdf</code>。</div>',
   '</div>',
   '<div class="card"><h2>关键日期 <span class="badge">可改，改完自动重算倒计时</span></h2>',
     '<div class="row" style="gap:8px">',
