@@ -1,0 +1,19 @@
+{
+  "name": "三轨学习计划 · 软考 + AI 实习 + 六级",
+  "short_name": "三轨计划",
+  "description": "软考软件设计师（2027-05）、AI 应用开发实习（2027-02 投递）、英语六级（2027-06）三条线合一的每日打卡与周计划。数据只存本机浏览器。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": "./三轨学习计划.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
